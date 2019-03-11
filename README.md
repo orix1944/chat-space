@@ -48,7 +48,7 @@ Things you may want to cover:
 ###association
 - has_many :groups, through: :group_users
 - has_many :group_users
-
+- has_many :messages
 
 ## groupテーブル
 
@@ -59,7 +59,7 @@ Things you may want to cover:
 ###association
 - has_many :users, through: :group_users
 - has_many :group_users
-
+- has_many :messages
 
 ## user_groupテーブル
 |Column|Type|Options|
@@ -70,6 +70,6 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - belonhs_to :group
-- has_many :messages
+
 
 
