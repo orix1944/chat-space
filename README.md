@@ -41,7 +41,7 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|nickname|text|null: false|
+|nickname|string|null: false|add_index|
 |mail|string|null: false|
 |encrypted passward|string|null: false|
 
@@ -59,7 +59,6 @@ Things you may want to cover:
 |group_id|references|null: false, foreign_key: true|
 
 ### Association
-- has many :messages
 - has many :groups
 - has many :users
 
