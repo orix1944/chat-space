@@ -32,10 +32,11 @@ Things you may want to cover:
 |body    |text   |null: true|
 |image   |string |null: true|
 
-
 ### Association
 - belongs_to :group
 - belongs_to :user
+
+
 
 ## userテーブル
 
@@ -45,12 +46,23 @@ Things you may want to cover:
 |mail|string|null: false|
 |encrypted passward|string|null: false|
 
+##association
+- has_many :groups, through: :group_users
+- has_many :group_users
+- accepts_nested_attributes_for :group_users
+
 
 ## groupテーブル
 
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
+
+##association
+- has_many :users, through: :group_users
+- has_many :group_users
+- accepts_nested_attributes_for :group_users
+
 
 ## user_groupテーブル
 |Column|Type|Options|
@@ -59,7 +71,8 @@ Things you may want to cover:
 |group_id|references|null: false, foreign_key: true|
 
 ### Association
-- has many :groups
-- has many :users
+- belongs_to :user
+- belonhs_to :group
+
 
 
