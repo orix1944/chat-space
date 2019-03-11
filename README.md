@@ -29,8 +29,8 @@ Things you may want to cover:
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
 |group_id|references|null: false, foreign_key: true|
-|body    |text   |null: true, foreign_key: true|
-|image   |string |null: true, foreign_key: true|
+|body    |text   |null: true|
+|image   |string |null: true|
 
 
 ### Association
@@ -41,16 +41,16 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|nickname|text|null: false, foreign_key: true|
-|mail|string|null: false, foreign_key: true|
-|encrypted passward|string|null: false, foreign_key: true|
+|nickname|text|null: false|
+|mail|string|null: false|
+|encrypted passward|string|null: false|
 
 
 ## groupテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, foreign_key: true|
+|name|string|null: false|
 
 ## user_groupテーブル
 |Column|Type|Options|
