@@ -35,7 +35,7 @@ Things you may want to cover:
 ### Association
 - belongs_to :group
 - belongs_to :user
-
+- belongs_to :user_group
 
 
 ## userテーブル
@@ -46,10 +46,6 @@ Things you may want to cover:
 |mail|string|null: false|
 |encrypted passward|string|null: false|
 
-##association
-- has_many :groups, through: :group_users
-- has_many :group_users
-- accepts_nested_attributes_for :group_users
 
 
 ## groupテーブル
@@ -58,10 +54,7 @@ Things you may want to cover:
 |------|----|-------|
 |name|string|null: false|
 
-##association
-- has_many :users, through: :group_users
-- has_many :group_users
-- accepts_nested_attributes_for :group_users
+
 
 
 ## user_groupテーブル
@@ -73,6 +66,5 @@ Things you may want to cover:
 ### Association
 - belongs_to :user
 - belonhs_to :group
-
 
 
