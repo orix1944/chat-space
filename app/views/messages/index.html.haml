@@ -1,0 +1,61 @@
+%html
+%body
+  .wrapper
+
+    .main-content
+      .main-header
+        .main-header__left-box
+          %h2.main-header__left-box__current-group
+            サンプル
+          %ul.main-header__left-box__mamber-list
+            サンプル
+        .main-header__edit-btn
+          = link_to "edit","/edit/"
+
+
+      .main-messages
+        .main-message
+          .main-message__upper-info
+            %p.main-message__upper-info__talker
+              サンプル
+            %p2.main-message__upper-info__data
+              サンプル
+          %p3.main-message__text
+            hello
+      .main-form
+        %form#new_message{"accept-charset" => "UTF-8", :action => "/groups/697/messages", :enctype => "multipart/form-data", :method => "post"}
+          %input{:name => "utf8", :type => "hidden", :value => "✓"}/
+          %input{:name => "authenticity_token", :type => "hidden", :value => "K/hCQAIIBza1DL57dcAn9yQLnr/huS5X7YUl+H9/vjIB3MKnFUZpQNPKpc6u+V6HXWDZwNeeylqqx5yEKsOFUA=="}/
+
+          .main-form__new-massage__input-box
+            %input#message_content{:name => "message[content]", :placeholder => "type a message", :type => "text"}/
+
+
+            %lavel.main-form__new-massage__input-box__image
+              %i.fa.fa-image
+          %input.main-form__submit-btn{"data-disable-with" => "Send", :name => "commit", :type => "submit", :value => "Send"}/
+
+    .side-content
+      .side-header
+        .side-header__user-name-box
+          %p
+            user-name
+          %ul
+            %li.side-header__box__menu__new-group
+              = link_to "/users/337/edit_path" do
+                %i.fa.fa-edit
+              = link_to "/groups/new_path" do
+                %i.fa.fa-cog
+      .room-content
+        .room-name
+          %h2
+            room-name
+        .message-log
+          %h3
+            message-log
+
+
+
+
+
+
