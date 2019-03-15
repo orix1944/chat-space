@@ -1,0 +1,21 @@
+.side-content {
+	width: 300px;
+	float: left;
+	background-color: #253141;
+    height:  100%;
+}
+
+$section-color: #FFFFFF;
+
+p{
+font-weight: bold;
+color: $section-color;
+}
+
+h2,
+h3{
+   color: $section-color;
+}
+
+
+
