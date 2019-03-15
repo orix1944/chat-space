@@ -2,11 +2,10 @@ html {
   height: 100%;
   width: 100%;
 }
-
 body {
   height: 100%;
   width: 100%;
-}
+
 
 @mixin clearfix() {
   &:after {
@@ -15,15 +14,10 @@ body {
     display: block;
   }
 }
-
-
-
-
 .wrapper{
  height: 100%;
  width: 100%;
  @include clearfix();
-
 }
 
 
