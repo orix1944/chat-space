@@ -1,12 +1,12 @@
 $(function(){
   function buildHTML(message){
     if(message.text != 0){
-      var xxx = `<p class="lower-message__content">
+      var present = `<p class="lower-message__content">
         ${message.text}
       </p>`
     }
     else{
-      var xxx = `<img src= ${message.image} class: 'lower-message__image'>`
+      var present = `<img src= ${message.image} class: 'lower-message__image'>`
     }
     var html = `<div class="message">
   <div class="upper-message">
@@ -18,7 +18,7 @@ $(function(){
     </div>
   </div>
   <div class="lower-message">
-    ${xxx}
+    ${present}
 
 
 
@@ -45,6 +45,7 @@ $(function(){
       $('.main-messages').append(html);
       $('.main-messages').animate({scrollTop: $('.main-messages')[0].scrollHeight}, 'fast');
       $('.form__submit').attr('disabled', false);
+      $('.form__message')[0].reset();
       $('.textbox').val('')
      })
     .fail(function(){
