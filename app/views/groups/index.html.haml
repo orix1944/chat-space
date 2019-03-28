@@ -3,24 +3,32 @@
     .main-header
       .main-header__left-box
         %h2.main-header__left-box__current-group
-          = @group.name
+          サンプル
         %ul.main-header__left-box__mamber-list
-          - @group.group_users.each do |group_user|
-            = group_user.user.name
+          サンプル
       .main-header__edit-btn
         = link_to "edit", "/groups/#{params[:group_id]}/edit"
 
 
     .main-messages
-      = render @messages
+      .main-message
+        .main-message__upper-info
+          %p.main-message__upper-info__talker
+            サンプル
+          %p2.main-message__upper-info__data
+            サンプル
+        %p3.main-message__text
+          hello
     .main-form
       .form
-        = form_for [@group, @message], id: 'new_message' do |f|
+        = form_for [@group, @message] do |f|
           = f.text_field :content, class: 'form__message', placeholder: 'type a message'
-          = f.label :image, class: 'form__mask' do
-            = fa_icon 'picture-o', class: 'icon'
-            = f.file_field :image, class: 'hidden'
+          .form__mask
+            = f.label :image, class: 'form__mask__image' do
+              = fa_icon 'picture-o', class: 'icon'
+              = f.file_field :image, class: 'hidden'
           = f.submit 'Send', class: 'form__submit'
+
   .side-content
     .side-header
       .side-header__user-name-box
@@ -38,4 +46,5 @@
           .group__name
             = group.name
           .group__message
-            = group.show_last_message
+            = group.latest.message
+

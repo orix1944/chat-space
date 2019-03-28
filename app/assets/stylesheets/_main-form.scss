@@ -1,49 +1,42 @@
 .main-form{
-    height: 90px;
-    padding: 20px 40px;
-    background-color: #ddd;
-    box-sizing: border-box;
-     #new_message{
-      box-sizing: border-box;
-      display: flex;
+  height: 90px;
+  padding: 20px 40px;
+  background-color: #ddd;
+  box-sizing: border-box;
+  .form__message{
       height: 50px;
-       .main-form__new-massage__input-box{
-         position: relative;
-         width: 100%;
-         box-sizing: border-box;
-
-         #message_content{
-            height: 50px;
-            width: 100%;
-            padding: 0 -10px 0 10px;
-            color: #434a54;
-            border-style: none;
-         }
-         .main-form__new-massage__input-box__image{
-            font-size: 1.3rem;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-         }
-            .fa-image{
-                display: inline-block;
-                font: normal normal normal 14px/1 FontAwesome;
-                font-size: inherit;
-                text-rendering: auto;
-                -webkit-font-smoothing: antialiased;
-              }
-            }
-       .main-form__submit-btn{
-          width: 100px;
-          height: 50px;
-          padding: 0 30px;
-          margin-left: 15px;
-          background-color: #38aef0;
-          color: white;
-          cursor: pointer;
-
-     }
+      width: 900px;
+      padding: 0 40px 0 10px;
+      color: #434a54;
+      border-style: none;
+      position: absolute;
+    .icon{
+        display: inline-block;
+        font: normal normal normal 14px/1 FontAwesome;
+        font-size: inherit;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+    }
+  }
+  .form__submit{
+    width: 100px;
+    height: 50px;
+    padding: 0 30px;
+    margin-left: 15px;
+    background-color: #38aef0;
+    color: white;
+    cursor: pointer;
+    float: right;
+  }
+  .form__mask{
+      font-size: 1.3rem;
+      left: 900px;
+      top: 10px;
+      cursor: pointer;
+      position: relative;
+    .hidden {
+      display: none;
+    }
   }
 }
 
