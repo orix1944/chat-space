@@ -28,15 +28,15 @@ return html;
 
 
 
-    $('.chat-group-form__input').on('keyup', function() {
-     var input = $('#user-search-field').val();
+  $('.chat-group-form__input').on('keyup', function() {
+   var input = $('#user-search-field').val();
 
       $.ajax({
         type: 'GET',
         url: '/users',
         data: { keyword: input },
         dataType: 'json'
-     })
+      })
       .done(function(datas) {
         datas.forEach(function(data){
           var user = appendData(data);
@@ -57,12 +57,9 @@ return html;
       var html = appendUser(user_name, user_id);
           $('#chat-group-users').append(html)
 
-    })
+      })
   $('#chat-group-users').on('click', '.chat-group-user__btn--remove', function() {
       $(this).parent().remove();
-    })
+     })
     });
    });
-
-
-
