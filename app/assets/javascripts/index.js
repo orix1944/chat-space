@@ -30,7 +30,7 @@ return html;
 
   $('#chat-input').on('keyup', function() {
    var input = $('#chat-input').val();
-   console.log(input)
+
 
       $.ajax({
         type: 'GET',
