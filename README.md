@@ -311,3 +311,20 @@ form    message.index.html.haml
 
 
         $('.main-messages').height()
+
+
+        ■解決したいこと
+group_userテーブルにデータを保存したい
+
+■自力で調べた内容
+グループメンバーとグループ名が逆に保存されているのでhtmlを見直したがなぜそうなるのかがサンプルを見てもわからなかった。
+
+
+# current_userを出現しない方法
+# 1. where文の比較条件で、current_userが出現しないようにする条件を加える
+# 2. where.not文を使い、current_userを出現しないようにする
+
+# 1. 27 ~ 30行目のhtmlの記述をhamlの記述方法にする
+# 2. 28行目、= f.hidden_fieldのを使って、書き換える
+# 3. name属性にキー指定とvalueにcurrent_userのidを入れる
+# 4. view上で、current_userの名前を表示されるようにする
