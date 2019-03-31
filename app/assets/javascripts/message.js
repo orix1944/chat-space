@@ -45,7 +45,7 @@ $(function(){
       $('.main-messages').append(html);
       $('.main-messages').animate({scrollTop: $('.main-messages')[0].scrollHeight}, 'fast');
       $('.form__submit').attr('disabled', false);
-      $('.form__message')[0].reset();
+      $('#new_message')[0].reset();
       $('.textbox').val('')
      })
     .fail(function(){
