@@ -6,9 +6,9 @@ $(function(){
       </p>`
     }
     else{
-      var content = `<img src= ${message.image} class: 'lower-message__image'>`
+      var content = `<img src= "${message.image}" class: 'lower-message__image'>`
     }
-    var html = `<div class="message">
+    var html = `<div class="message" data-id="${message.id}">
   <div class="upper-message">
     <div class="upper-message__user-name">
       ${message.user_name}
@@ -19,8 +19,6 @@ $(function(){
   </div>
   <div class="lower-message">
     ${content}
-
-
 
   </div>
 </div>
@@ -52,5 +50,28 @@ $(function(){
       alert('非同期通信に失敗しました');
     })
     })
-  });
 
+    function update(){
+
+    var message_id = $('.message:last').data('id') || 0;
+    $.ajax({
+      url: location.href,
+      type: 'GET',
+      data: { id: message_id },
+      dataType: 'json',
+    })
+    .done(function(data){
+       if (data.length != null){
+       data.forEach(function(message) {
+        var html = buildHTML(message);
+        $('.main-messages').append(html);
+        $('.main-messages').animate({scrollTop: $('.main-messages')[0].scrollHeight}, 'fast');
+      })
+      }
+     })
+    .fail(function(){
+      alert('非同期通信に失敗しました');
+    })
+     }
+      setInterval(update,5000);
+  });
