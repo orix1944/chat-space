@@ -52,11 +52,7 @@ $(function(){
     })
 
     function update(){
-    //  if($('.message')[0]){
-    //   var message_id = $('.message:last').data('id');
-    // } else {
-    //   var message_id = 0
-    // }
+
     var message_id = $('.message:last').data('id') || 0;
     $.ajax({
       url: location.href,
