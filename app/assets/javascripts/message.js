@@ -52,26 +52,31 @@ $(function(){
     })
 
     function update(){
-
-    var message_id = $('.message:last').data('id') || 0;
-    $.ajax({
-      url: location.href,
-      type: 'GET',
-      data: { id: message_id },
-      dataType: 'json',
-    })
-    .done(function(data){
-       if (data.length != null){
-       data.forEach(function(message) {
-        var html = buildHTML(message);
-        $('.main-messages').append(html);
-        $('.main-messages').animate({scrollTop: $('.main-messages')[0].scrollHeight}, 'fast');
+      console.log('hey')
+      var message_id = $('.message:last').data('id') || 0;
+      $.ajax({
+        type: 'GET',
+        url: location.href,
+        data: { id: message_id },
+        dataType: 'json',
       })
-      }
-     })
-    .fail(function(){
-      alert('非同期通信に失敗しました');
-    })
+      .done(function(data){
+         if (data.length != null){
+         data.forEach(function(message) {
+          var html = buildHTML(message);
+          $('.main-messages').append(html);
+          $('.main-messages').animate({scrollTop: $('.main-messages')[0].scrollHeight}, 'fast');
+        })
+        }
+       })
+      .fail(function(){
+        alert('非同期通信に失敗しました');
+      })
      }
+
+       var number = $('.main-content').data('group-id');
+       console.log(number)
+     if (location.pathname == `/groups/${number}/messages`) {
       setInterval(update,5000);
+     }
   });
