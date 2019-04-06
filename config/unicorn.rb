@@ -1,7 +1,7 @@
 <<<<<<< Updated upstream
 aapp_path = File.expand_path('../../../', __FILE__)
 
-=======
+# =======
 >>>>>>> Stashed changes
 worker_processes 1
 
