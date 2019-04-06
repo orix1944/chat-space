@@ -1,8 +1,8 @@
-<<<<<<< Updated upstream
-aapp_path = File.expand_path('../../../', __FILE__)
+# <<<<<<< Updated upstream
+# app_path = File.expand_path('../../../', __FILE__)
 
-# =======
->>>>>>> Stashed changes
+# # =======
+# >>>>>>> Stashed changes
 worker_processes 1
 
 working_directory "#{app_path}/current"
