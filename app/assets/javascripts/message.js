@@ -76,7 +76,7 @@ $(function(){
 
        var number = $('.main-content').data('group-id');
        console.log(number)
-     if (location.pathname == `/groups/${number}/messages`) {
-      setInterval(update,5000);
-     }
+     // if (location.pathname == `/groups/${number}/messages`) {
+     //  setInterval(update,5000);
+     // }
   });
