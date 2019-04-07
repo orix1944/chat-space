@@ -28,7 +28,7 @@ class GroupsController < ApplicationController
 
 
    def edit
-
+      @users = @group.users
    end
 
    def update
