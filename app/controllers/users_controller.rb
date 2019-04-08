@@ -13,6 +13,12 @@ class UsersController < ApplicationController
 
 
 def edit
+  @users = User.where('name LIKE(?)', "%#{params[:keyword]}%" ).where.not(id: current_user).limit(10)
+    respond_to do |format|
+      format.json
+      format.html
+     end
+
   end
 
   def update

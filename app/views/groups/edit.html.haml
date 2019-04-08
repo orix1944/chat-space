@@ -19,19 +19,25 @@
           チャットメンバーを追加
       .chat-group-form__field--right
         .chat-group-form__search.clearfix
-          %input#chat-input.chat-group-form__input{placeholder: '追加したいユーザー名を入力してください', type: 'text'}
-        #user-search-result
+          %input#chat-input2.chat-group-form__input{placeholder: '追加したいユーザー名を入力してください', type: 'text'}
+        #user-search-result2
 
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
         .chat-group-form__label
           チャットメンバー
       .chat-group-form__field--right
-        #chat-group-users
+        #chat-group-users2
           #chat-group-user-22.chat-group-user.clearfix
             = f.hidden_field :user_ids, name: "group[user_ids][]", class: "chat_group[user_ids][]", value: current_user.id
             %h5.chat-group-user__name
-              = current_user.name
+          - @group.group_users.each do |group_user|
+            .chat-group-user.clearfix
+              %input{name: "group[user_ids][]", type: "hidden", value: group_user.user.id}
+              %h6.chat-group-user__name
+                = group_user.user.name
+              %a.user-search-remove.chat-group-user__btn.chat-group-user__btn--remove2.js-remove-btn 削除
+
 
     .chat-group-form__field.clearfix
       .chat-group-form__field--left
