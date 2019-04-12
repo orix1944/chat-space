@@ -1,6 +1,6 @@
 $(function(){
   function buildHTML(message){
-     if(message.text != 0 && message.image != ""){
+     if(message.text != 0 && message.image != null){
       var content = `<p class="lower-message__content">
         ${message.text}
       </p>
